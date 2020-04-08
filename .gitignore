@@ -3,3 +3,9 @@
 #######################
 
 homeplay/__pycache__/
+
+.vscode/
+
+*.sqlite3
+
+env/

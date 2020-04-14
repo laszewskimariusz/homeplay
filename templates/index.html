@@ -17,28 +17,29 @@
     </div>
 </header>
 
-{% if user.is_authenticated %}
+<!-- {% if user.is_authenticated %}
 
         <p>You are not logged in</p>
         <a href="{% url 'login' %}">login</a>
-      {% endif %}
+      {% endif %} -->
 
 
 {% for post in post_list %}
-<div class="card-deck">
-        <div class="card border-primary mb-3" style="max-width: 20rem;">
-            <a href="{% url 'post_detail' post.slug  %}">
-        <img style="height: 200px; width: 100%; display: block;" src="{{ post.thumb.url }}" alt="Card image">
-            </a>
-        <div class="card-header">Film albo Serial</div>
-        <div class="card-body">
-        <h4 class="card-title">{{ post.title }}</h4>
-        <p class="card-text">{{post.content|slice:":200" }}</p>
-        </div>
-        </div>
-    {% endfor %}
-</div> 
-</div> 
+{% if forloop.counter0|divisibleby:3 %}
+<div class="card-deck">{% endif %}
+    <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <a href="{% url 'post_detail' post.slug  %}">
+            <img style="height: 200px; width: 100%; display: block;" src="{{ post.thumb.url }}" alt="Card image"></a>
+                <div class="card-header">Film albo Serial</div>
+                    <div class="card-body">
+                    <h4 class="card-title">{{ post.title }}</h4>
+                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    </div>
+    </div> {% endfor %}        
+</div>    
+   
+</div>     
 
-</div>  
+
+      
 {%endblock%}

@@ -13,3 +13,5 @@ env/
 film/__pycache__/
 
 film/migrations/
+
+media/

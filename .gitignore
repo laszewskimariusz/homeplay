@@ -9,3 +9,7 @@ homeplay/__pycache__/
 *.sqlite3
 
 env/
+
+film/__pycache__/
+
+film/migrations/

@@ -1,0 +1,50 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+
+
+<script src="{% static "player\dash.all.min.js" %}" ></script>
+
+<script src="{% static "admin/css/base.css" %}" ></script>
+<!--dash.all.min.js should be used in production over dash.all.debug.js
+    Debug files are not compressed or obfuscated making the file size much larger compared with dash.all.min.js-->
+<!--<script src="../../dist/dash.all.min.js"></script>-->
+
+<style>
+    video {
+        width: 640px;
+        height: 360px;
+    }
+</style>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 card mb-4  mt-3 left  top">
+      <div class="card-body">
+        <h1>{% block title %} {{ object.title }} {% endblock title %}</h1>
+        <p class=" text-muted">{{ post.author }} | {{ post.created_on }}</p>
+        
+
+        <div class="code">
+            <video autoplay preload="none" controls="true">
+                <source src="{{ object.link }}" type="application/dash+xml"/>
+            </video>
+
+            
+
+
+            <p class="card-text ">{{ object.content | safe }}</p>
+
+
+
+
+
+
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+{% endblock content %}

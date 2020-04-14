@@ -17,11 +17,15 @@
     </div>
 </header>
 
-<!-- {% if user.is_authenticated %}
 
-        <p>You are not logged in</p>
-        <a href="{% url 'login' %}">login</a>
-      {% endif %} -->
+{% if user.is_authenticated %}  
+
+
+
+
+                 
+
+
 
 
       <div class="container-fluid">
@@ -45,5 +49,10 @@
       </div>
   </div>   
 
-
+  {% else %}
+  <div class="alert alert-dismissible alert-danger">    
+  
+  <strong>Oh snap!</strong>Ktoś tu nie jest zalogowany.</a> Naciśnij naciśk poniżej
+  <a href="{% url 'login' %}"  button type="button" class="btn btn-info" >login</button></a>
+</div>{% endif %}
 {%endblock%}

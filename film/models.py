@@ -11,6 +11,19 @@ RESOLUTION = (
     ("1080p", "1080p"),
     ("4k", "4K")
 )
+GENRES= (
+    ("Akcja", "Akcja"),
+    ("Komedia", "Komedia"),
+    ("Dramat", "Dramat"),
+    ("Fantasy", "Fantasy"),
+    ("Horro", "Horror"),
+    ("Katastroficzny", "Katastroficzny"),
+    ("Przygodowy", "Przygodowy"),
+    ("Thriller", "Thriller"),
+    ("Western,", "Western"),
+    ("Wojenny", "Wojenny")   
+
+)
 
 
 class Post(models.Model):
@@ -22,6 +35,7 @@ class Post(models.Model):
     link = models.CharField(max_length=300, default='dash video link')
     content = models.TextField()
     resolution = models.CharField(max_length=32,choices=RESOLUTION, default="720p")
+    genres = models.CharField(max_length=32,choices=GENRES, default="Akcja")
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 

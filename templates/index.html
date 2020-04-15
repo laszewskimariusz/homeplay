@@ -26,11 +26,13 @@
                           <img style=display: block;" src="{{ post.thumb.url }}" alt="Responsive image" width="307" height="240" >
                       </a>
                       <div class="card-header">
-                          Header
+                          TEST
+                          <span class="badge badge-pill badge-info">{{ post.resolution }}</span>
                       </div>
                       <div class="card-body">
                           <h4 class="card-title">{{ post.title|slice:":15"}}</h4>
                           <p class="card-text">{{ post.content|slice:":30" }} ...</p>
+                          
                       </div>
                   </div>
               </div>

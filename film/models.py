@@ -6,7 +6,11 @@ STATUS = (
     (0,"Draft"),
     (1,"Publish")
 )
-
+RESOLUTION = (
+    ("720p", "720p"),
+    ("1080p", "1080p"),
+    ("4k", "4K")
+)
 
 
 class Post(models.Model):
@@ -17,6 +21,7 @@ class Post(models.Model):
     thumb = models.ImageField(default='default.png', blank=True)
     link = models.CharField(max_length=300, default='dash video link')
     content = models.TextField()
+    resolution = models.CharField(max_length=32,choices=RESOLUTION, default="720p")
     created_on = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(choices=STATUS, default=0)
 
